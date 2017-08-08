@@ -1,1 +1,62 @@
- 
+header {
+    float: left;
+    width: 100%;
+    background-color: #1c5275;
+    font-family: "Courier New", Courier New, Courier, monospace;
+}
+
+#titulo{
+    margin-left: 30px;
+    font-size: 190%;
+    float: left;
+    width: 60%;
+}
+
+#resto{
+    margin-top: 80px;
+    float: right;
+    margin-right: 30px;
+}
+
+nav {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    background-color: #234256;
+}
+
+section {
+    float: left;
+    width: 100%;
+}
+
+/*estilos globais */
+
+.container{
+    width: 1200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.bordered-block{
+    display: block;
+    border-color: #7d7d7d;
+    border-width: 2px;
+    border-style: solid;
+    /*border: #7d7d7d 2px solid;*/
+}
+
+.padding-10{
+    padding: 10px;
+}
+
+.floating-box {
+    float: left;
+    width: 100px;
+    height: 20px;
+    margin: 45px;
+}
+
+.after-box {
+    clear: left;
+}
