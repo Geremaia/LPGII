@@ -1,8 +1,26 @@
+body{
+    background: #CCC
+}
+
 header {
     float: left;
     width: 100%;
-    background-color: #1c5275;
+    display: block;
+    background-color: #2C3941;
     font-family: "Courier New", Courier New, Courier, monospace;
+}
+
+header h1, header h2{
+    color: #D3D9DD
+}
+
+header h1{
+    margin: 30px 20px;
+}
+
+header h2{
+    text-align: right;
+    margin-right: 20px;
 }
 
 #titulo{
@@ -20,9 +38,31 @@ header {
 
 nav {
     margin-top: 10px;
+    display: block;
     float: left;
     width: 100%;
-    background-color: #234256;
+    background-color: #5B9ACE;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: nome;
+    margin-top: 15px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    color: #D3D9DD;
+    text-decoration: nome;
+    padding: 13px 70px;
+}
+
+nav ul li a:hover{
+    background-color: #2C3941;
 }
 
 section {
@@ -48,15 +88,4 @@ section {
 
 .padding-10{
     padding: 10px;
-}
-
-.floating-box {
-    float: left;
-    width: 100px;
-    height: 20px;
-    margin: 45px;
-}
-
-.after-box {
-    clear: left;
 }
