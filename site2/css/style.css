@@ -37,11 +37,12 @@ header h2{
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 20px;
     display: block;
     float: left;
     width: 100%;
     background-color: #5B9ACE;
+    height: 45px;
 }
 
 nav ul{
