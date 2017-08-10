@@ -101,10 +101,18 @@ nav ul li a {
     padding: 13px 35px;
 }
 
+nav ul li a:hover {
+    color: #3C3C3C;
+}
+
 /*estilos globais */
 
 .container{
     width: 1200px;
     display: block;
     margin: 0 auto;
+}
+
+.active{
+    color: #067BBB;
 }
