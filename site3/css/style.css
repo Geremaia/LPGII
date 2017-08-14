@@ -119,18 +119,18 @@ nav ul li.active a{
     color: #069BBB;
 }
 
+nav ul li.blog{
+    background-color: #067BBB;
+}
+
+nav ul li.blog a{
+    color: #fff;
+}
+
 /*estilos globais */
 
 .container{
     width: 1200px;
     display: block;
     margin: 0 auto;
-}
-
-.blog{
-    background-color: #067BBB;
-}
-
-.blog a{
-    color: #fff;
 }
