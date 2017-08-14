@@ -74,6 +74,8 @@ header{
     width: 17px;
 }
 
+/* Estilos do Nav*/
+
 nav{
     margin-top: 5px;
     float: left;
@@ -115,4 +117,9 @@ nav ul li a:hover {
 
 .active{
     color: #067BBB;
+}
+
+.blog{
+    background-color: #067BBB;
+    color: #fff;
 }
