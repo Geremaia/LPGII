@@ -1,6 +1,9 @@
 body{
     font-family: sans-serif;
 }
+
+/*Estilos do Header*/
+
 header{
     float: left;
     width: 100%;
@@ -90,22 +93,30 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     margin-top: 14px;
     margin-bottom: 14px;
 }
 
 nav ul li {
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 nav ul li a {
-    color: #7C7C7C;
+    color: #3C3C3C;
     text-decoration: none;
-    padding: 13px 35px;
+    font-weight: 500;
+    /*padding: 13px 35px;*/
 }
 
 nav ul li a:hover {
-    color: #3C3C3C;
+    color: #069BBB;
+}
+
+nav ul li.active a{
+    color: #069BBB;
 }
 
 /*estilos globais */
@@ -116,11 +127,10 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-.active{
-    color: #067BBB;
-}
-
 .blog{
     background-color: #067BBB;
+}
+
+.blog a{
     color: #fff;
 }
