@@ -134,6 +134,14 @@ nav ul li.blog{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bded', endColorstr='#0680a7',GradientType=0 ); /* IE6-9 */
 }
 
+nav ul li.blog:hover {
+    background: #076B8C; /* Old browsers */
+    background: -moz-linear-gradient(top, #076B8C 0%, #0680a7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #076B8C 0%,#0680a7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #076B8C 0%,#0680a7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#076B8C', endColorstr='#0680a7',GradientType=0 ); /* IE6-9 */
+}
+
 nav ul li.blog a{
     color: #fff;
 }
@@ -142,6 +150,7 @@ nav ul li.blog a{
 
 section#image{
     margin-top: 20px; 
+    margin-bottom: 20px; 
     float: left;
     display: block;
     width: 100%;
