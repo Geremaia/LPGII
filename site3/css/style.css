@@ -140,7 +140,7 @@ nav ul li.blog a{
 
 /*Estilos do section*/
 
-section{
+section#image{
     margin-top: 20px; 
     float: left;
     display: block;
@@ -160,7 +160,7 @@ section .image img{
 
 }
 
-section .image h2 { 
+section .image h1 { 
     position: absolute; 
     padding-left: 30px;
     top: 250px; 
@@ -175,6 +175,93 @@ section .image p{
     padding-left: 30px;
     color: #3C3C3C;
 }
+
+/*estolos da segunda section*/
+
+
+section#navegacao {
+    float: left;
+    width: 100%;
+}
+
+section#navegacao ul {
+    list-style-image: url('../img/gt-icon.png');
+    height: 22px;
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+section#navegacao ul li:first-child {
+    color: #069BBB;
+    font-size: 14px;
+    padding-top: 3px;
+    list-style: none;
+}
+
+section#navegacao ul li a {
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+section#navegacao ul li a:hover {
+    color: #069BBB;
+}
+
+section#navegacao .about-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+section#navegacao .about-block h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+section#navegacao .about-block img {
+    float: left;
+    display: block;
+    width: 150px;
+}
+
+section#navegacao .about-block p {
+    float: left;
+    display: block;
+    width: 270px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    font-size: 12px;
+}
+
+section#navegacao .about-block:last-child p {
+    float: left;
+    display: block;
+    width: 290px;
+    margin-left: 20px;
+    margin-right: 0;
+    font-size: 12px;
+}
+
+section#navegacao .about-block p a {
+    text-decoration: none;
+    color: #069BBB;
+}
+
+section#navegacao .about-block .read-more {
+    text-align: right;
+    margin-top: 30px;
+}
+
 /*estilos globais */
 
 .container{
