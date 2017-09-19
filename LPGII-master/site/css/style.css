@@ -1,0 +1,61 @@
+
+
+header {
+    float: left;
+    width: 100%;
+}
+
+header div{
+    float: left;
+}
+
+header #logo{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+nav {
+    float: left;
+    width: 10%;
+}
+
+section {
+    float: left;
+    width: 80%;
+}
+
+section .formatted-article{
+    margin: 10px;
+}
+
+aside {
+    float: right;
+    width: 10%;
+}
+
+footer{
+    float: left;
+    width: 100%;
+}
+
+/*estilos globais */
+
+.container{
+    width: 1200px;
+    display: block;
+    margin: 0 auto;
+    border: blue solid 1px;
+}
+.bordered-block{
+    display: block;
+    border-color: #7d7d7d;
+    border-width: 2px;
+    border-style: solid;
+    /*border: #7d7d7d 2px solid;*/
+}
+
+.padding-10{
+    padding: 10px;
+}

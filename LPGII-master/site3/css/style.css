@@ -1,0 +1,280 @@
+body{
+    font-family: sans-serif;
+}
+
+/*Estilos do Header*/
+
+header{
+    float: left;
+    width: 100%;
+    display: block;
+}
+
+#logo{
+    width: 50%;
+    float: left;
+    display: block;
+    margin-top: 10px;
+}
+
+#logo img{
+    width: 80px;
+    float: left;
+    display: block;
+}
+
+#logo h1{
+    color: #7C7C7C;
+    text-align: left;
+    display: block;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+#extras{
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+#extras-links{
+    float: right;
+    color: #7C7C7C;
+    font-size: 15px;
+    margin: 0px;
+}
+
+#extras-links a{
+    color: #7C7C7C;
+    text-decoration: none;
+}
+
+#extras-links a:hover{
+    color: #3C3C3C;
+}
+
+#extras-contacts{
+    clear: both;
+    float: right;
+    color: #067BBB;
+    text-transform: lowercase;
+    font-size: 14px;
+    margin: 13px 0px 0px 0px;
+}
+
+#extras-phone{
+    clear: both;
+    float: right;
+    font-size: 18px;
+    margin: 0px;
+}
+
+#extras-phone img{
+    float: left;
+    display: block;
+    margin-right: 10px;
+    width: 17px;
+}
+
+/* Estilos do Nav*/
+
+nav{
+    clear: both;
+    margin-top: 5px;
+    float: left;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav ul li {
+    padding: 5px 10px;
+    /*display: inline-block;*/
+}
+
+nav ul li a {
+    color: #3C3C3C;
+    text-decoration: none;
+    font-weight: 500;
+    border-right: 1px solid #e9e9e9;
+    padding: 4px 25px;
+}
+
+nav ul li:last-child a, nav ul li.portfolio a{
+    border: none;
+}
+
+nav ul li a:hover {
+    color: #069BBB;
+}
+
+nav ul li.active a{
+    color: #069BBB;
+}
+
+nav ul li.blog{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00bded+0,0680a7+100 */
+    background: #00bded; /* Old browsers */
+    background: -moz-linear-gradient(top, #00bded 0%, #0680a7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #00bded 0%,#0680a7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #00bded 0%,#0680a7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bded', endColorstr='#0680a7',GradientType=0 ); /* IE6-9 */
+}
+
+nav ul li.blog:hover {
+    background: #076B8C; /* Old browsers */
+    background: -moz-linear-gradient(top, #076B8C 0%, #0680a7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #076B8C 0%,#0680a7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #076B8C 0%,#0680a7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#076B8C', endColorstr='#0680a7',GradientType=0 ); /* IE6-9 */
+}
+
+nav ul li.blog a{
+    color: #fff;
+}
+
+/*Estilos do section*/
+
+section#image{
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+section .image { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+ }
+
+section .image img{
+    width: 100%;
+    float: left;
+    height: 400px;
+    display: block;
+
+}
+
+section .image h1 { 
+    position: absolute; 
+    padding-left: 30px;
+    top: 250px; 
+    width: 100%;
+    color: #069BBB; 
+ }
+
+section .image p{
+    position: absolute;
+    top: 300px; 
+    width: 35%;
+    padding-left: 30px;
+    color: #3C3C3C;
+}
+
+/*estolos da segunda section*/
+
+
+section#navegacao {
+    float: left;
+    width: 100%;
+}
+
+section#navegacao ul {
+    list-style-image: url('../img/gt-icon.png');
+    height: 22px;
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+section#navegacao ul li:first-child {
+    color: #069BBB;
+    font-size: 14px;
+    padding-top: 3px;
+    list-style: none;
+}
+
+section#navegacao ul li a {
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+section#navegacao ul li a:hover {
+    color: #069BBB;
+}
+
+section#navegacao .about-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+section#navegacao .about-block h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+section#navegacao .about-block img {
+    float: left;
+    display: block;
+    width: 150px;
+}
+
+section#navegacao .about-block p {
+    float: left;
+    display: block;
+    width: 270px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    font-size: 12px;
+}
+
+section#navegacao .about-block:last-child p {
+    float: left;
+    display: block;
+    width: 290px;
+    margin-left: 20px;
+    margin-right: 0;
+    font-size: 12px;
+}
+
+section#navegacao .about-block p a {
+    text-decoration: none;
+    color: #069BBB;
+}
+
+section#navegacao .about-block .read-more {
+    text-align: right;
+    margin-top: 30px;
+}
+
+/*estilos globais */
+
+.container{
+    width: 1200px;
+    display: block;
+    margin: 0 auto;
+}
