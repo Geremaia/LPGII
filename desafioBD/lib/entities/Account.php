@@ -22,7 +22,7 @@
         }
 
         public function setEmail($email) {
-            $this->nome = $email;
+            $this->email = $email;
         }
 
         public function getPassword() {
