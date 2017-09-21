@@ -15,21 +15,14 @@
                     Alert::showMessages();
                 ?>
                 <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                <p id="profile-name" class="profile-name-card">Login</p>
-                <form class="form-signin" action="login.php" method="POST">
+                <p id="profile-name" class="profile-name-card">Cadastro</p>
+                <form class="form-signin" action="valido.php" method="POST">
                     <span id="reauth-email" class="reauth-email"></span>
                     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+                    <input type="text" name="answer" id="inputAnswer" class="form-control" placeholder="Resposta da pergunta de segurança" required>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
                 </form><!-- /form -->
-                <a href="cadastro.php" class="forgot-password">
-                    Gostaria de se cadastrar?
-                </a>
-                <a href="validar.php" class="forgot-password">
-                    Esqueceu a senha?
-                </a>
             </div><!-- /card-container -->
         </div><!-- /container -->
-
     </body>
 </html>
