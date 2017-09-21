@@ -7,15 +7,17 @@
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    $answer = $_POST['answer'];
+    
     $acc = new Account();
     $acc->setEmail($email);
     $acc->setPassword($password);
+    $acc->setAnswer($answer);
 
     $adao = new AccountDAO();
 
     if($adao->emailExist($email)) {
-        $_SESSION['error'] = "E-mail já cadastrado.";
+        $_SESSION['error'] = "E-mail ajá cadastrado.";
         header("Location: cadastro.php");
     } else {
         $adao->insertAccount($acc);

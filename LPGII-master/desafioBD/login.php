@@ -1,5 +1,5 @@
 <?php
-    require("start.php");
+    require('start.php');
     use App\entities\Account as Account;
     use App\dao\AccountDAO as AccountDAO;
 

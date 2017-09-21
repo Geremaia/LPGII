@@ -6,6 +6,7 @@
 
         private $email;
         private $password;
+        private $answer;
 
         public function getEmail() {
             return $this->email;
@@ -21,5 +22,13 @@
 
         public function setPassword($password) {
             $this->password = Encryptor::encrypt($password);
+        }
+
+        public function getAnswer() {
+            return $this->answer;
+        }
+
+        public function setAnswer($answer) {
+            $this->answer = $answer;
         }
     }

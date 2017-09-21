@@ -8,26 +8,28 @@
 
         public function insertAccount($acc){
             $db = new ConnectionFactory();
-            $stmt = $db->conn->prepare('INSERT INTO Users (email, password)
-                                        VALUES(:email, :ep)');
+            $stmt = $db->conn->prepare('INSERT INTO Users (email, password, answer)
+                                        VALUES(:email, :ep, :answer)');
             $status = $stmt->execute(array(
                 ':email' => $acc->getEmail(),
-                ':ep' => $acc->getPassword()
+                ':ep' => $acc->getPassword(),
+                ':answer' => $acc->getAnswer()
             ));
             
             return $status;
         }
         
-        public function verifyData($email){
+        public function verifyData($acc) {
             $db = new ConnectionFactory();
-
-            $stmt = $db->conn->prepare('SELECT * FROM Users WHERE email = :email AND password = :password');
-            $stmt->execute(array(
-                ':email' => $email,
-                ':password' => $password
+            $stmt = $db->conn->prepare('SELECT * FROM Users 
+                                        WHERE email = :email AND password = :password');
+            
+            $status = $stmt->execute(array(
+                ':email' => $acc->getEmail(),
+                ':password' => $acc->getPassword()
             ));
-
-            return $stmt->fetch(PDO::FETCH_OBJ);
+            
+            return $stmt->fetch(PDO::FETCH_OBJ);        
         }
 
         public function emailExist($email){
