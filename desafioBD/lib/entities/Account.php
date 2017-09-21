@@ -1,17 +1,20 @@
 <?php
-  
+    namespace App\entities;
+
+    use App\utils\Encryptor as Encryptor;
+
     class Account {
         
-        private $id;
+        private $answer;
         private $email;
         private $password;
 
-        public function getId() {
-            return $this->id;
+        public function getAnswer() {
+            return $this->answer;
         }
 
-        public function setId($id) {
-            $this->id = $id;
+        public function setAnswer($answer) {
+            $this->answer = $answer;
         }
 
         public function getEmail() {
@@ -27,7 +30,8 @@
         }
 
         public function setPassword($password) {
-            $this->password = $password;
+            $this->password = Encryptor::encrypt($password);
         }
+        
     }
 ?>

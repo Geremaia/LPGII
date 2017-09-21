@@ -6,16 +6,29 @@
 
     class AccountDAO{
 
-        public function insertAccount($dados){
+        public function insertAccount($acc){
             $db = new ConnectionFactory();
 
-            $stmt = $db->conn->prepare('INSERT INTO Users (email, password) VALUES(:email, :password)');
+            $stmt = $db->conn->prepare('INSERT INTO Users (email, password, answer) VALUES(:email, :password, :answer)');
             $stmt->execute(array(
-                ':email' => $dados['email'],
-                ':password' => $dados['encrypted_password']
+                ':email' => $acc->getEmail(),
+                ':password' => $acc->getPassword(),
+                ':answer' => $acc->getAnswer()
+            ));
+            return $status; 
+        }
+
+        public function verifyData($acc) {
+            $db = new ConnectionFactory();
+            $stmt = $db->conn->prepare('SELECT * FROM Users 
+                                        WHERE email = :email AND password = :password');
+            
+            $status = $stmt->execute(array(
+                ':email' => $acc->getEmail(),
+                ':password' => $acc->getPassword()
             ));
             
-            return $status; 
+            return $stmt->fetch(PDO::FETCH_OBJ);        
         }
             
         public function emailExist($email){
