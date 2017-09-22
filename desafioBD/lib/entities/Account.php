@@ -14,7 +14,7 @@
         }
 
         public function setAnswer($answer) {
-            $this->answer = $answer;
+            $this->answer = strtolower($answer);
         }
 
         public function getEmail() {
