@@ -9,7 +9,7 @@ class AccountDAO {
     public function insertAccount($account) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('INSERT INTO accounts (email, password, cidade)
+        $stmt = $cf->conn->prepare('INSERT INTO Users (email, password, answer)
                                     VALUES(:email, :ep, :cidade)');
         $status = $stmt->execute(array(
             ':email' => $account->getEmail(),
@@ -23,7 +23,7 @@ class AccountDAO {
     public function verifyData($account) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM accounts 
+        $stmt = $cf->conn->prepare('SELECT * FROM Users 
                                     WHERE email = :email AND password = :password');
         
         $status = $stmt->execute(array(
@@ -37,8 +37,8 @@ class AccountDAO {
     public function verifyRecover($account) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM accounts 
-                                    WHERE email = :email AND cidade = :cidade');
+        $stmt = $cf->conn->prepare('SELECT * FROM Users 
+                                    WHERE email = :email AND answer = :cidade');
         
         $status = $stmt->execute(array(
             ':email' => $account->getEmail(),
@@ -52,7 +52,7 @@ class AccountDAO {
     public function emailExist($email) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM accounts WHERE email = :email');
+        $stmt = $cf->conn->prepare('SELECT * FROM Users WHERE email = :email');
         $stmt->execute(array(
             ':email' => $email
         ));
@@ -63,7 +63,7 @@ class AccountDAO {
     public function updatePassword($account) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('UPDATE accounts set password = :password
+        $stmt = $cf->conn->prepare('UPDATE Users set password = :password
                                     WHERE email = :email');
         $status = $stmt->execute(array(
             ':email' => $account->getEmail(),

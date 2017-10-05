@@ -40,6 +40,26 @@ class ProductsController {
         }    
     }
 
+    public function update() {
+        $nome  = $_POST['nome'];
+        $valor = $_POST['valor'];
+
+        $p = new Product();
+        $p->setNome($nome);
+        $p->setValor($valor);
+
+        $pdao = new ProductDAO();
+        
+        if($pdao->updateProduct($p)) {
+            $_SESSION['msg'] = "Produto atualizado com sucesso";
+            header('Location: /admin/products');
+            exit();
+        } else {
+            $_SESSION['error'] = "Ocorreu um erro ao atualizar o produto, verifique os dados novamente.";
+            return include('lib/views/products/new.php');
+        }    
+    }
+
     public function show() {
         $id = $_GET['id'];
 
@@ -48,7 +68,8 @@ class ProductsController {
 
         return include('lib/views/products/show.php');
     }
-
-
-
+    
+    public function edit() {
+        return include('lib/views/products/edit.php');      
+    }
 }

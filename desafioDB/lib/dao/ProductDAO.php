@@ -10,7 +10,7 @@ class ProductDAO {
     public function insertProduct($product) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('INSERT INTO products (nome, valor)
+        $stmt = $cf->conn->prepare('INSERT INTO Products (nome, valor)
                                     VALUES(:nome, :valor)');
         $status = $stmt->execute(array(
             ':nome' => $product->getNome(),
@@ -19,18 +19,32 @@ class ProductDAO {
         
         return $status;        
     }
+
+    public function updateProduct($product) {
+        $cf = new ConnectionFactory();
+
+        $stmt = $cf->conn->prepare('INSERT INTO Products (nome, valor)
+                                    VALUES(:nome, :valor) WHERE idProducts = :id');
+        $status = $stmt->execute(array(
+            ':nome' => $product->getNome(),
+            ':valor' => $product->getValor(),
+            ':id' => $id
+        ));
+        
+        return $status;        
+    }
     
     public function all() {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM products');
+        $stmt = $cf->conn->prepare('SELECT * FROM Products');
         $stmt->execute();
         
         $produts = [];
 
         foreach($stmt->fetchAll() as $product) {
             $p = new Product();
-            $p->setId($product['id_product']);
+            $p->setId($product['idProducts']);
             $p->setNome($product['nome']);
             $p->setValor($product['valor']);
 
@@ -43,14 +57,14 @@ class ProductDAO {
     public function find($id) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM products WHERE id_product = :id');
+        $stmt = $cf->conn->prepare('SELECT * FROM Products WHERE idProducts = :id');
         $stmt->execute(array(
             ':id' => $id
         ));
         
         foreach($stmt->fetchAll() as $product) {
             $p = new Product();
-            $p->setId($product['id_product']);
+            $p->setId($product['idProducts']);
             $p->setNome($product['nome']);
             $p->setValor($product['valor']);
         }

@@ -27,6 +27,7 @@ $routes = [
     '/admin/products/new' => ['class' => 'App\controllers\ProductsController', 'method' => 'new'],
     '/admin/products/create' => ['class' => 'App\controllers\ProductsController', 'method' => 'create'],
     '/admin/products/show' => ['class' => 'App\controllers\ProductsController', 'method' => 'show'],
+    '/admin/products/edit' => ['class' => 'App\controllers\ProductsController', 'method' => 'edit'],
 ];
 
 
