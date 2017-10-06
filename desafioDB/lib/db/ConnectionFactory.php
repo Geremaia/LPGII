@@ -6,9 +6,9 @@ use \PDO;
 class ConnectionFactory {
 
     private $host = "localhost";
-    private $db = "teste";
+    private $db = "login";
     private $user = "root";
-    private $password = "123Batatadoce#@!";
+    private $password = "D3v3l0pm3nt";
     public $conn;
 
     public function __construct() {

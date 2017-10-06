@@ -19,24 +19,25 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Alteração do Produto</h2>
+                    <h2>Cadastro de Produtos</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left" action="/admin/products/update" method="POST">
+                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left">
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="valor" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="product-nome" name="product_name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Valor <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="valor" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="product-valor" name="product_value" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

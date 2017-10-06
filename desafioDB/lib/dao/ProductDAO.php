@@ -10,25 +10,12 @@ class ProductDAO {
     public function insertProduct($product) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('INSERT INTO Products (nome, valor)
-                                    VALUES(:nome, :valor)');
-        $status = $stmt->execute(array(
-            ':nome' => $product->getNome(),
-            ':valor' => $product->getValor()
-        ));
-        
-        return $status;        
-    }
-
-    public function updateProduct($product) {
-        $cf = new ConnectionFactory();
-
-        $stmt = $cf->conn->prepare('INSERT INTO Products (nome, valor)
-                                    VALUES(:nome, :valor) WHERE idProducts = :id');
+        $stmt = $cf->conn->prepare('INSERT INTO products (nome_product, valor_product, id_category)
+                                    VALUES(:nome, :valor, :id_category)');
         $status = $stmt->execute(array(
             ':nome' => $product->getNome(),
             ':valor' => $product->getValor(),
-            ':id' => $id
+            ':id_category' => $product->getCategoria()
         ));
         
         return $status;        
@@ -37,16 +24,19 @@ class ProductDAO {
     public function all() {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM Products');
+        $stmt = $cf->conn->prepare('SELECT * FROM products p
+                                    JOIN categories c
+                                    ON (c.id_category = p.id_category)');
         $stmt->execute();
         
         $produts = [];
 
         foreach($stmt->fetchAll() as $product) {
             $p = new Product();
-            $p->setId($product['idProducts']);
-            $p->setNome($product['nome']);
-            $p->setValor($product['valor']);
+            $p->setId($product['id_product']);
+            $p->setNome($product['nome_product']);
+            $p->setValor($product['valor_product']);
+            $p->setCategoria($product['nome_category']);
 
             $products[] = $p;
         }
@@ -57,16 +47,16 @@ class ProductDAO {
     public function find($id) {
         $cf = new ConnectionFactory();
 
-        $stmt = $cf->conn->prepare('SELECT * FROM Products WHERE idProducts = :id');
+        $stmt = $cf->conn->prepare('SELECT * FROM products WHERE id_product = :id');
         $stmt->execute(array(
             ':id' => $id
         ));
         
         foreach($stmt->fetchAll() as $product) {
             $p = new Product();
-            $p->setId($product['idProducts']);
-            $p->setNome($product['nome']);
-            $p->setValor($product['valor']);
+            $p->setId($product['id_product']);
+            $p->setNome($product['nome_product']);
+            $p->setValor($product['valor_product']);
         }
         
         return $p;

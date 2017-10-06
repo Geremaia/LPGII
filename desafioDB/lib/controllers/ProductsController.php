@@ -4,6 +4,7 @@ namespace App\controllers;
 
 use App\entities\Product as Product;
 use App\dao\ProductDAO as ProductDAO;
+use App\dao\CategoryDAO as CategoryDAO;
 
 class ProductsController {
 
@@ -16,6 +17,10 @@ class ProductsController {
     }
 
     public function new() {
+        $cdao = new CategoryDAO();
+        
+        $categories = $cdao->all(); 
+        
         // Aqui vai toda a consulta com o banco de dados
         return include('lib/views/products/new.php');      
     }
@@ -23,10 +28,12 @@ class ProductsController {
     public function create() {
         $nome  = $_POST['nome'];
         $valor = $_POST['valor'];
+        $category = $_POST['categoria'];
 
         $p = new Product();
         $p->setNome($nome);
         $p->setValor($valor);
+        $p->setCategoria($category);
 
         $pdao = new ProductDAO();
         
@@ -40,26 +47,6 @@ class ProductsController {
         }    
     }
 
-    public function update() {
-        $nome  = $_POST['nome'];
-        $valor = $_POST['valor'];
-
-        $p = new Product();
-        $p->setNome($nome);
-        $p->setValor($valor);
-
-        $pdao = new ProductDAO();
-        
-        if($pdao->updateProduct($p)) {
-            $_SESSION['msg'] = "Produto atualizado com sucesso";
-            header('Location: /admin/products');
-            exit();
-        } else {
-            $_SESSION['error'] = "Ocorreu um erro ao atualizar o produto, verifique os dados novamente.";
-            return include('lib/views/products/new.php');
-        }    
-    }
-
     public function show() {
         $id = $_GET['id'];
 
@@ -68,8 +55,7 @@ class ProductsController {
 
         return include('lib/views/products/show.php');
     }
-    
-    public function edit() {
-        return include('lib/views/products/edit.php');      
-    }
+
+
+
 }
