@@ -25,6 +25,15 @@ class ProductsController {
         return include('lib/views/products/new.php');      
     }
 
+    public function edit() {
+        $cdao = new CategoryDAO();
+        
+        $categories = $cdao->all(); 
+        
+        // Aqui vai toda a consulta com o banco de dados
+        return include('lib/views/products/edit.php');      
+    }
+
     public function create() {
         $nome  = $_POST['nome'];
         $valor = $_POST['valor'];
@@ -39,6 +48,29 @@ class ProductsController {
         
         if($pdao->insertProduct($p)) {
             $_SESSION['msg'] = "Produto cadastrado com sucesso";
+            header('Location: /admin/products');
+            exit();
+        } else {
+            $_SESSION['error'] = "Ocorreu um erro ao cadastrar o produto, verifique os dados novamente.";
+            return include('lib/views/products/new.php');
+        }    
+    }
+
+    public function update() {
+        $nome  = $_POST['nome'];
+        $valor = $_POST['valor'];
+        $category = $_POST['categoria'];
+        $id = $_GET['id'];
+
+        $p = new Product();
+        $p->setNome($nome);
+        $p->setValor($valor);
+        $p->setCategoria($category);
+
+        $pdao = new ProductDAO();
+        
+        if($pdao->updateProduct($p)) {
+            $_SESSION['msg'] = "Produto atualizado com sucesso";
             header('Location: /admin/products');
             exit();
         } else {

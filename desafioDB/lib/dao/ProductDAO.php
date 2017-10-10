@@ -20,6 +20,21 @@ class ProductDAO {
         
         return $status;        
     }
+
+    public function updateProduct($product) {
+        $cf = new ConnectionFactory();
+
+        $stmt = $cf->conn->prepare('UPDATE INTO products (nome_product, valor_product, id_category)
+                                    VALUES(:nome, :valor, :id_category) WHERE id_product = :id');
+        $status = $stmt->execute(array(
+            ':nome' => $product->getNome(),
+            ':valor' => $product->getValor(),
+            ':id_category' => $product->getCategoria(),
+            ':id' => $product->getId(),
+        ));
+        
+        return $status;        
+    }
     
     public function all() {
         $cf = new ConnectionFactory();
